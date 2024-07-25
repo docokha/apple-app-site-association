@@ -1,0 +1,24 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get install -y curl
+
+    - name: Deploy file to GitHub Pages
+      run: |
+        mkdir -p public
+        cp apple-app-site-association public/
+        curl -X PUT -H "Content-Type: application/json" --data-binary @public/apple-app-site-association https://github.com/docokha/apple-app-site-association/blob/main/apple-app-site-association
