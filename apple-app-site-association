@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "65SHMUDYMB.com.growthlab.unlocknow",
+        "paths": [ "/invite?code=*" ]
+      }
+    ]
+  }
+}
